@@ -23,6 +23,7 @@ this size.
 from __future__ import annotations
 
 import logging
+import time
 import re
 import urllib.parse
 from collections.abc import Iterator
@@ -174,22 +175,60 @@ def harvest_raw(query: str, mailto: str = "") -> Iterator[Paper]:
     ``harvest()`` composes its query from a term list, which suits SRED. STEP
     builds structured multi-block queries in ``scripts/01_search.py``, so it
     needs an entry point that takes the finished string and does nothing to it.
+
+    Two completeness guards, both learned the hard way. Europe PMC under load
+    returns HTTP 200 with valid JSON, a correct ``hitCount``, and an **empty**
+    ``resultList``. That passes every check in :func:`step.http.get_json`,
+    which only looks for an ``error`` key, so the harvest recorded 0 records
+    for 2025 and 2026 and the shard writer marked both years complete. The
+    guards below turn that silent truncation into an exception, which leaves
+    the shard without its ``.done`` marker so a rerun retries it.
     """
     cursor, seen, guard = "*", 0, 0
+    hits = None
+    empty_first = 0
     while True:
         data = _search(query, cursor, mailto)
         results = (data.get("resultList") or {}).get("result") or []
+
+        if hits is None:
+            hits = int(data.get("hitCount") or 0)
+
         if not results:
-            return
+            # GUARD 1. An empty page on the first request, when the provider
+            # itself reports a non-zero hit count, is a degraded response and
+            # not an empty result set.
+            if cursor == "*" and hits > 0:
+                empty_first += 1
+                if empty_first > 4:
+                    raise RuntimeError(
+                        f"europepmc returned {hits} hits but no records across "
+                        f"{empty_first} attempts; refusing to record an empty shard")
+                sleep = 8 * empty_first
+                log.warning("europepmc: hitCount=%d but empty resultList, "
+                            "retry %d in %ds", hits, empty_first, sleep)
+                time.sleep(sleep)
+                continue
+            break
+
         for r in results:
             seen += 1
             yield to_paper(r)
+
         nxt = data.get("nextCursorMark")
         if not nxt or nxt == cursor:
-            log.info("europepmc: %d records for prebuilt query", seen)
-            return
+            break
         cursor = nxt
         guard += 1
         if guard > 20000:
             log.error("europepmc cursor guard tripped at %d records", seen)
-            return
+            break
+
+    # GUARD 2. Pagination that stops well short of the advertised hit count is
+    # truncation, whatever the cause. Better to fail the shard than to publish
+    # a PRISMA number that is quietly 80% short.
+    if hits and seen < hits * 0.9:
+        raise RuntimeError(
+            f"europepmc truncated: {seen} of {hits} records retrieved "
+            f"({seen / hits:.0%}); shard not marked complete")
+    log.info("europepmc: %d records for prebuilt query (hitCount %s)", seen, hits)

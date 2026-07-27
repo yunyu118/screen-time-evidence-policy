@@ -360,6 +360,76 @@ evaluations:
     verified_from: Undermind report synthesis; abstract
     verified: false
 
+  # ---- 2026 additions -----------------------------------------------------
+
+  - policy_id: NLD-SCHOOL-PHONE
+    jurisdiction: Netherlands
+    policy_short: School smartphone bans, partial (classroom) vs full (grounds)
+    pmid: "41499073"
+    doi: null
+    year: 2026
+    journal: Journal of Youth and Adolescence
+    design: controlled_before_after
+    design_label: >-
+      Cross-school comparison of ban intensity, 9 partial-ban vs 15 full-ban
+      schools, EPoSS Study 2024-2025
+    data_source: Dutch secondary schools
+    n_analysed: 1398
+    n_note: "24 schools, mean age 16.2 y, 51.5% female"
+    outcomes_measured:
+      - mental_health_symptoms
+      - device_use_behaviour
+    outcome_primary: Wellbeing, social connectedness at school, bullying
+    effect_text: >-
+      No significant difference on any wellbeing or bullying outcome between
+      partial and full bans. Full bans were associated with LOWER
+      student-teacher connectedness and, among girls, reduced school belonging.
+    secondary_text: >-
+      THE FIRST DOSE-RESPONSE TEST OF BAN INTENSITY, and the first signal of
+      possible harm. Roughly 40% of countries now operate school phone bans; a
+      stricter ban was not better on any intended outcome and was worse on
+      belonging for girls, the group the policies most often invoke.
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: not_reported
+    direction: null_effect_with_adverse_signal
+    verified_from: PubMed efetch abstract, PMID 41499073
+    verified: true
+
+  - policy_id: GBR-SCHOOL-PHONE
+    jurisdiction: England
+    policy_short: School smartphone policies and digital safeguarding incidents
+    pmid: "41813197"
+    doi: null
+    year: 2026
+    journal: Child and Adolescent Mental Health
+    design: cross_sectional
+    design_label: >-
+      Cross-sectional, freedom-of-information requests to 114 schools
+    data_source: England, 2023/2024 academic year, more than 90 000 pupils
+    n_analysed: 114
+    n_note: "schools; >90,000 pupils"
+    outcomes_measured:
+      - device_use_behaviour
+    outcome_primary: Reported digital safeguarding incidents
+    effect_text: >-
+      60 of 114 schools (52.6%) had a policy, with inconsistent use of the word
+      "ban". Digital incidents were 4.9% of all incidents (4183/85 540).
+      Schools with policies, regardless of restrictiveness, reported MORE
+      digital incidents.
+    secondary_text: >-
+      A published letter in the same journal argues the direction is likely
+      detection sensitivity rather than underlying harm, and that safeguarding
+      incidents are not a measure of psychological wellbeing (PMID 42246114).
+      Included here as an illustration of how thin the school-ban evidence is,
+      not as evidence of effect.
+    suicide_outcome: false
+    powered_for_mental_health: "no"
+    preregistered: "no"
+    direction: uninterpretable_as_policy_effect
+    verified_from: PubMed efetch abstract, PMID 41813197
+    verified: true
+
 # ---------------------------------------------------------------------------
 # The strongest available evidence on the exposure-outcome link the policies
 # are justified by. Kept separate from policy evaluations on purpose: this is
@@ -417,6 +487,23 @@ suicide_causal_designs:
       mobile phone use, which is consistent with reverse causation.
     direction: reverse_causation
     verified_from: Full text
+    verified: true
+
+  - pmid: "42291422"
+    year: 2026
+    journal: PeerJ
+    design: systematic_review
+    design_label: >-
+      Systematic review of smartphone addiction and suicidal ideation or
+      attempt, PubMed/Embase/Web of Science/Cochrane to August 2025
+    unit: 11 studies, 9 in South Korea, 1 China, 1 United States
+    finding: >-
+      Consistent positive associations with suicidal ideation, odds ratios 1.14
+      to 4.57 in high-risk users, and with suicide attempt, 1.15 to 1.87.
+      ALL ELEVEN INCLUDED STUDIES ARE CROSS-SECTIONAL. The exposure is
+      addictive use, not duration.
+    direction: association_cross_sectional_only
+    verified_from: PubMed efetch abstract, PMID 42291422
     verified: true
 
   - doi: "10.1016/j.jhealeco.2025.103014"
