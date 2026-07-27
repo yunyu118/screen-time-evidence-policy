@@ -1,0 +1,42 @@
+{
+  "n_policies": 13,
+  "n_jurisdictions": 10,
+  "jurisdictions": [
+    "Australia",
+    "Brazil",
+    "China",
+    "Denmark",
+    "France",
+    "Japan",
+    "South Korea",
+    "Sweden",
+    "United Kingdom",
+    "United States"
+  ],
+  "n_prespecified": 1,
+  "n_not_prespecified": 11,
+  "n_prespecified_unknown": 1,
+  "n_never_evaluated": 6,
+  "n_not_eligible_for_evaluation": 2,
+  "n_with_any_evaluation": 4,
+  "n_correlational_only": 11,
+  "n_evaluations_table2": 12,
+  "n_evaluations_reporting_mental_health": 5,
+  "n_evaluations_reporting_suicide_or_self_harm": 0,
+  "n_riskfactor_anchor": 1,
+  "evaluation_status_counts": {
+    "evaluated_early": 2,
+    "not_evaluated": 6,
+    "evaluated_after": 1,
+    "evaluated_partial": 1,
+    "not_applicable_advisory": 1,
+    "largely_not_evaluated": 1,
+    "not_yet_in_force": 1
+  },
+  "evidence_at_enactment_counts": {
+    "correlational_only": 11,
+    "theory_and_correlational": 1,
+    "correlational_and_case_evidence": 1
+  },
+  "n_verified_policy_entries": 0
+}

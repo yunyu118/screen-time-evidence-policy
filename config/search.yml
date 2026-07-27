@@ -1,0 +1,277 @@
+# STEP search specification
+#
+# Screen Time Evidence and Policy: what has actually been tested, and what has
+# merely been recommended.
+#
+# The search has two arms, and keeping them separate is the analytic point of
+# the whole project.
+#
+#   ARM A - POLICY EVALUATIONS. Studies that evaluate an enacted or trialled
+#   policy or environmental intervention restricting or restructuring young
+#   people's screen and social media use. The question is not whether such
+#   policies exist but whether anyone measured what happened after them.
+#
+#   ARM A REQUIRES NO OUTCOME TERM, and this is the correction that matters
+#   most in the whole specification. The original query required a mental
+#   health or suicide term in the title or abstract. That silently excluded
+#   every policy evaluation whose only outcome was behavioural, which is most
+#   of them, and which is precisely this study's finding. It excluded Barnes
+#   et al. (BMJ 2026), the Australian regression discontinuity we cite as
+#   load-bearing evidence: the record is in PubMed, matches our intervention
+#   clause, and fails only the outcome clause because it measured platform use
+#   rather than symptoms. A query that presupposes the outcome cannot measure
+#   which outcomes were chosen. Outcome class is coded at appraisal, alongside
+#   design, for exactly the same reason.
+#
+#   ARM B - RISK-FACTOR EVIDENCE. Studies estimating the association, and
+#   ideally the causal effect, of screen time or social media use on youth
+#   mental health, self-harm, and suicide. This is the evidence base the
+#   policies are justified by, and its strength is the load-bearing question:
+#   a policy cannot be better evidenced than the premise it rests on.
+#
+# Both arms are restricted to populations under 25. The Surgeon General's
+# advisory, the AAP guidance, and every national policy in the inventory are
+# addressed to children and adolescents, so an evidence assessment aimed at
+# them should not be padded with adult samples.
+
+date_range:
+  start: "2010-01-01"      # smartphone-era; pre-2010 exposure is not comparable
+  end: "2026-12-31"
+
+population:
+  max_age: 24
+  # PubMed age filters are exact and worth using rather than approximating
+  # with free text.
+  pubmed_age_filters:
+    - "infant[MeSH Terms]"
+    - "child[MeSH Terms]"
+    - "adolescent[MeSH Terms]"
+    - "young adult[MeSH Terms]"
+  free_text:
+    - "child*"
+    - "adolescen*"
+    - "youth"
+    - "teen*"
+    - "student*"
+    - "young people"
+    - "pediatric"
+    - "paediatric"
+    - "school-age*"
+
+exposure:
+  # The construct is deliberately broad at search and narrowed at screening.
+  # "Screen time" alone misses the social-media-specific literature, and
+  # "social media" alone misses the gaming and general-device literature that
+  # the Kagawa and Toyoake ordinances actually target.
+  terms:
+    - "screen time"
+    - "screen use"
+    - "screen media"
+    - "social media"
+    - "smartphone"
+    - "mobile phone"
+    - "cell phone"
+    - "digital media"
+    - "digital technology"
+    - "internet use"
+    - "video game*"
+    - "gaming"
+    - "problematic internet use"
+    - "TikTok"
+    - "Instagram"
+    - "Facebook"
+    - "YouTube"
+    - "Snapchat"
+
+outcomes:
+  mental_health:
+    - "mental health"
+    - "depress*"
+    - "anxiet*"
+    - "anxious"
+    - "wellbeing"
+    - "well-being"
+    - "psychological distress"
+    - "internalizing"
+    - "externalizing"
+    - "body image"
+    - "sleep"
+    - "loneliness"
+    - "life satisfaction"
+  suicide:
+    - "suicid*"
+    - "self-harm"
+    - "self harm"
+    - "self-injur*"
+    - "non-suicidal self-injury"
+    - "NSSI"
+
+# ---------------------------------------------------------------------------
+# ARM A: policy and intervention evaluations
+# ---------------------------------------------------------------------------
+arm_a_policy:
+  intervention_terms:
+    - "policy"
+    - "policies"
+    - "ban"
+    - "banned"
+    - "restriction*"
+    - "regulat*"
+    - "legislat*"
+    - "law"
+    - "ordinance"
+    - "curfew"
+    - "age verification"
+    - "age assurance"
+    - "minimum age"
+    - "phone-free"
+    - "phone free"
+    - "device ban"
+    - "guideline*"
+    - "recommendation*"
+    - "intervention"
+    - "trial"
+    - "program*"
+    - "programme*"
+    - "school-based"
+    - "digital literacy"
+    - "media literacy"
+    - "parental control*"
+    - "screen time reduction"
+    - "digital detox"
+    - "abstinence"
+  # Design terms are NOT required at search. Requiring them would guarantee the
+  # finding that everything retrieved was evaluated, which is precisely the
+  # question at issue. Design is coded at appraisal instead.
+  design_terms_for_coding:
+    - "randomi*"
+    - "randomised controlled trial"
+    - "cluster randomi*"
+    - "quasi-experimental"
+    - "difference-in-difference*"
+    - "differences-in-differences"
+    - "interrupted time series"
+    - "regression discontinuity"
+    - "natural experiment"
+    - "synthetic control"
+    - "propensity score"
+    - "instrumental variable"
+    - "stepped wedge"
+    - "pre-post"
+    - "controlled before-after"
+
+# ---------------------------------------------------------------------------
+# ARM B: the risk-factor evidence the policies rest on
+# ---------------------------------------------------------------------------
+arm_b_riskfactor:
+  # Restricted to designs capable of supporting a causal claim, plus syntheses.
+  # A cross-sectional correlation cannot justify a national ban, and including
+  # thousands of them would obscure how little of the literature can.
+  preferred_designs:
+    - "longitudinal"
+    - "prospective"
+    - "cohort"
+    - "randomi*"
+    - "natural experiment"
+    - "instrumental variable"
+    - "within-person"
+    - "fixed effects"
+    - "co-twin"
+    - "sibling"
+    - "Mendelian randomization"
+    - "preregistered"
+    - "specification curve"
+    - "meta-analys*"
+    - "systematic review"
+    - "umbrella review"
+
+# ---------------------------------------------------------------------------
+# Screening
+# ---------------------------------------------------------------------------
+screening:
+  min_abstract_chars: 150
+  exclude_doc_types:
+    - "editorial"
+    - "comment"
+    - "letter"
+    - "news"
+    - "erratum"
+    - "retraction of publication"
+    - "biography"
+    - "obituary
+"
+  # Adult-only samples and clinical populations outside the policy question.
+  exclude_if_matches:
+    - "older adults"
+    - "elderly"
+    - "dementia"
+    - "workplace"
+    - "occupational screen"
+    - "dry eye"
+    - "myopia"          # a real screen-time outcome, but not this paper's
+    - "computer vision syndrome"
+    - "musculoskeletal"
+    - "sedentary behaviour and obesity"   # unless mental health also present
+  keep_if_also:
+    - "mental health"
+    - "depress"
+    - "anxiet"
+    - "suicid"
+    - "self-harm"
+    - "wellbeing"
+    - "well-being"
+
+# ---------------------------------------------------------------------------
+# Appraisal schema. What we record per study, and why.
+# ---------------------------------------------------------------------------
+appraisal:
+  design_hierarchy:
+    # Ordered by capacity to support a causal claim about a policy.
+    - rct_individual
+    - rct_cluster
+    - natural_experiment
+    - regression_discontinuity
+    - difference_in_differences
+    - interrupted_time_series
+    - synthetic_control
+    - controlled_before_after
+    - prospective_cohort
+    - uncontrolled_pre_post
+    - cross_sectional
+    - qualitative
+    - modelling_simulation
+    - review_systematic
+    - review_narrative
+    - none
+
+  outcome_class:
+    - device_use_behaviour      # did the policy change what it targeted?
+    - mental_health_symptoms
+    - self_harm
+    - suicide_attempt
+    - suicide_death
+    - academic
+    - sleep
+    - physical_activity
+    - other
+
+  # The three questions the paper turns on.
+  key_fields:
+    was_policy_evaluated: [yes, no, protocol_only, unclear]
+    powered_for_mental_health: [yes, no, not_reported, not_applicable]
+    preregistered: [yes, no, not_reported]
+
+  risk_of_bias_tool:
+    rct: "Cochrane RoB 2"
+    nonrandomised: "ROBINS-I"
+    observational: "Newcastle-Ottawa"
+
+  effect:
+    record:
+      - effect_measure          # OR, RR, SMD, beta, percentage point change
+      - point_estimate
+      - ci_lower
+      - ci_upper
+      - n_analysed
+      - follow_up_months
+      - direction               # benefit, harm, null, mixed

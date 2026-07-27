@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------------------
+# Harvested data. 1.6 GB of NDJSON shards, rebuildable from config with one
+# command, so it does not belong in git. The .done markers that carry the
+# PRISMA counts are small and ARE tracked, because they are the evidence for
+# the numbers in the manuscript.
+# ---------------------------------------------------------------------------
+data/raw/**
+!data/raw/*/
+!data/raw/**/*.done
+
+# ---------------------------------------------------------------------------
+# Publisher PDFs. These are copyrighted articles obtained through an
+# institutional subscription. Redistributing them in a public repository is a
+# licence violation regardless of how the repository is licensed. The DOIs are
+# in the reference collection; anyone can resolve them.
+# ---------------------------------------------------------------------------
+data/external/fulltext/
+*.pdf
+!figures/*.pdf
+
+# Undermind deep-search reports. Yunyu's own outputs from a paid service, and
+# they quote source abstracts at length. Keep them local unless a decision is
+# made to publish them.
+data/external/undermind/
+
+# Credentials. Never commit.
+.env
+.env.*
+*.key
+secrets/
+
+# HTTP cache
+data/raw/_httpcache/
+**/_httpcache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs are runtime artefacts, but the directory must exist at import time.
+logs/*
+!logs/.gitkeep
+
+# The Undermind export carries 126 publisher abstracts. Bibliographic metadata
+# is factual and safe to publish; the abstracts are not ours to redistribute.
+# The stripped copy, undermind_refs_metadata.csv, is tracked instead.
+data/external/undermind_refs.csv
+data/external/undermind_refs.ris
+
+# Symlink to the sibling project's install. Matches with no trailing
+# slash, because git stores a symlink as a file, not a directory.
+node_modules

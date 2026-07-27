@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STEP Outbox</title>
+<style>
+  :root{
+    --burgundy:#8A2B2B; --ink:#1b1b1b; --muted:#6b6b6b;
+    --line:#e3e3e3; --bg:#faf9f8; --card:#ffffff;
+    --green:#2e7d4f; --gold:#b8860b; --blue:#2b5f8a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:Arial,Helvetica,sans-serif;line-height:1.55;
+       padding:18px 14px 60px}
+  .wrap{max-width:820px;margin:0 auto}
+  header{border-bottom:3px solid var(--burgundy);padding-bottom:14px;margin-bottom:22px}
+  h1{margin:0 0 4px;font-size:1.45rem;color:var(--burgundy);letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.86rem}
+  .note{background:#fff;border-left:4px solid var(--blue);padding:12px 14px;
+        border-radius:0 8px 8px 0;margin:0 0 22px;font-size:.9rem;
+        box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+        margin-bottom:20px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .card > .head{padding:14px 16px;border-left:5px solid var(--green)}
+  .who{font-weight:bold;font-size:1.02rem;margin:0 0 2px}
+  .role{color:var(--muted);font-size:.83rem;margin:0}
+  .tag{display:inline-block;font-size:.7rem;text-transform:uppercase;
+       letter-spacing:.06em;padding:2px 8px;border-radius:99px;margin-left:8px;
+       vertical-align:2px;font-weight:bold;background:#e6f4ec;color:var(--green)}
+  .subject{padding:0 16px 6px;font-size:.9rem}
+  .subject b{color:var(--muted);font-weight:normal}
+  .attach{padding:0 16px 12px;font-size:.83rem;color:var(--muted)}
+
+  /* The email body. Real paragraphs, so the text wraps to the reader's window
+     and the clipboard gets one line per paragraph instead of my source wraps. */
+  .mail{padding:16px 18px;background:#fbfbfa;border-top:1px solid var(--line);
+        font-size:.9rem;line-height:1.62;color:#242424}
+  .mail p{margin:0 0 1em}
+  .mail p:last-child{margin-bottom:0}
+  .mail ol{margin:0 0 1em;padding-left:1.4em}
+  .mail ol li{margin:0 0 .75em}
+  .mail .sig{color:#3a3a3a}
+  .mail .opt{background:#fdf3dd;border-left:3px solid var(--gold);
+             padding:8px 12px;border-radius:0 5px 5px 0}
+  .opt-label{display:block;font-size:.72rem;text-transform:uppercase;
+             letter-spacing:.06em;color:var(--gold);font-weight:bold;
+             margin-bottom:3px}
+
+  .facts{padding:12px 16px;border-top:1px solid var(--line);font-size:.83rem;
+         color:var(--muted);background:#fff}
+  .facts b{color:var(--ink)}
+  .actions{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);
+           background:#fff;flex-wrap:wrap}
+  button{font-family:inherit;font-size:.85rem;font-weight:bold;cursor:pointer;
+         border:1px solid var(--burgundy);background:#fff;color:var(--burgundy);
+         padding:9px 15px;border-radius:7px;transition:.12s;min-height:40px}
+  button:hover{background:var(--burgundy);color:#fff}
+  button.done{background:var(--green);border-color:var(--green);color:#fff}
+  footer{color:var(--muted);font-size:.78rem;text-align:center;margin-top:34px;
+         border-top:1px solid var(--line);padding-top:14px}
+  @media(max-width:520px){ body{padding:14px 10px 50px} h1{font-size:1.2rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>STEP Outbox</h1>
+  <div class="sub">Screen Time Evidence and Policy &middot; created 27 Jul 2026 &middot;
+  nothing sent, nothing drafted in Gmail</div>
+</header>
+
+<div class="note">
+  <b>Copy, paste, send yourself.</b> Attach <code>STEP_manuscript.docx</code>
+  before sending. <b>Copy email text</b> gives clean paragraphs with no hard
+  line breaks inside them, so it pastes correctly into Gmail or Outlook. The
+  <b>Standing rule:</b> collaborators do not know the project acronyms, so
+  every email spells them out. This one says Screen Time Evidence and Policy,
+  never STEP. Use Suicide Research Evidence Database for the other project.
+</div>
+
+<div class="card">
+  <div class="head">
+    <p class="who">J. John Mann, MD<span class="tag">Ready</span></p>
+    <p class="role">Columbia University &middot; confirmed coauthor &middot; senior read on the suicide evidence and the two-paper strategy</p>
+  </div>
+  <div class="subject"><b>Subject:</b> Draft on the evidence base for youth screen time policy, and a question about strategy</div>
+  <div class="attach"><b>Attach:</b> STEP_manuscript.docx (2,722 words, 3 tables, 1 figure, 24 references)</div>
+
+  <div class="mail" id="mail-mann">
+    <p>Dear John,</p>
+
+    <p>Thank you for agreeing to help with this. I am attaching the first of two papers from a project I have been calling Screen Time Evidence and Policy, and I would be glad to have you as a coauthor on both.</p>
+
+    <p>The paper asks a narrow question: how much of the current youth screen time and social media policy landscape rests on evidence that the intervention works, as distinct from evidence that the exposure is associated with harm. We built an inventory of 13 enacted or announced policies across 10 jurisdictions and systematically searched PubMed and Europe PMC for evaluations of them.</p>
+
+    <p>The finding I think will interest you most concerns suicide. Across the 12 published policy evaluations we identified, none reported suicide or self-harm, and only 5 reported any mental health outcome at all. Suicide is the outcome invoked most often in advocacy for these laws and it is measured in none of the studies of whether they work. The exposure level is no cleaner. An instrumental variable analysis of Twitter's geographic adoption finds no relationship with county suicide rates, and a bidirectional Mendelian randomization study finds no effect of device use on suicide risk together with evidence running the other way. Against those, broadband rollout instruments in Italy and Spain do find increases in hospital-recorded self-harm and, in Spain, suicide mortality among adolescent girls. The designs capable of testing the question disagree.</p>
+
+    <p>Two other results carry the argument. Korean game-server logs show the 2011 gaming curfew cut play by 109 minutes among light users and not at all among heavy users, who moved more minutes into unrestricted hours than they lost. And the most cited evaluation of school phone bans, reporting a 0.07 SD gain in exam performance, failed to replicate in a larger Swedish sample that rejects gains above 0.01 SD. More than 30 US states are adopting that policy now.</p>
+
+    <p>I plan two papers. The first is the attached argument piece, currently drafted to JAMA Special Communication length, making the case that professional bodies should use their authority to require that proposed solutions be tested rather than presenting them as established remedies. The second is a registered systematic review with component meta-analyses, which I am starting now. The individual-level reduction trials can be pooled; the policy evaluations cannot, because they share no common estimand. Demonstrating that asymmetry formally is the point of the second paper.</p>
+
+    <p>Three questions, whenever you have time:</p>
+
+    <ol>
+      <li>Where does the draft overreach? I would rather hear it from you than from a reviewer.</li>
+      <li>Is the two-paper split the right strategy, or would you keep this as one piece?</li>
+      <li>The argument paper could instead go as a 1200-word Viewpoint. That is faster and needs no presubmission inquiry, but it allows only one display item, and I think the policy inventory table is what makes the piece evidence rather than opinion. I would value your judgment on that trade.</li>
+    </ol>
+
+    <p>Any other comments are welcome, including whether the framing is fair to the Surgeon General's advisory and to the professional organizations. I have tried to agree with the goal and to disagree only with the leap from concern to prescription.</p>
+
+    <p>Thank you,<br>Yunyu</p>
+
+    <p class="sig">Yunyu Xiao, PhD<br>
+    Department of Population Health Sciences<br>
+    Weill Cornell Medicine, Cornell University<br>
+    yux4008@med.cornell.edu<br>
+    ORCID 0000-0002-0479-1781</p>
+  </div>
+
+  <div class="facts">
+    <b>Figures quoted, all checked against the current build:</b>
+    13 policies / 10 jurisdictions &middot;
+    12 evaluations, 0 reporting suicide or self-harm, 5 reporting any mental
+    health outcome &middot;
+    Korea light gamers &minus;108.8 min, heavy gamers &minus;0.2 min
+    (Jo et al., <i>Mark Sci</i> 2020, Tables 2 and 3) &middot;
+    Beland &amp; Murphy +0.07 SD vs Kessel et al. rejecting &gt;0.01 SD
+    &middot; manuscript 2,722 words against a 3,000 limit
+  </div>
+
+  <div class="actions">
+    <button onclick="copyMail(this, true)">Copy email text</button>
+    <button onclick="this.classList.toggle('done');
+      this.textContent = this.classList.contains('done') ? 'Sent' : 'Mark as sent'">Mark as sent</button>
+  </div>
+</div>
+
+<footer>
+  Nothing here has been sent and nothing has been drafted in your Gmail.
+  Rebuild the manuscript with <code>python manuscript/build.py &amp;&amp;
+  node manuscript/make_docx.js</code> before attaching, so the file matches the
+  numbers above.
+</footer>
+</div>
+
+<script>
+// Build plain text from the block structure rather than from innerText, which
+// varies between browsers on list numbering and on how many blank lines a
+// block boundary produces. One blank line between paragraphs, hard breaks kept
+// only where a <br> was written (the signature).
+function mailText(root, includeOptional){
+  const parts = [];
+  root.childNodes.forEach(node => {
+    if (node.nodeType !== 1) return;
+    if (!includeOptional && node.dataset && node.dataset.optional) return;
+    if (node.tagName === 'OL'){
+      let i = 1;
+      node.querySelectorAll('li').forEach(li => {
+        parts.push(i++ + '. ' + li.textContent.replace(/\s+/g, ' ').trim());
+      });
+      return;
+    }
+    const clone = node.cloneNode(true);
+    const label = clone.querySelector('.opt-label');
+    if (label) label.remove();
+    // Collapse whitespace inside each text node BEFORE assembling, so that the
+    // newlines and indentation in this file's source do not survive into the
+    // clipboard. Only an explicit <br> produces a line break, which keeps the
+    // signature block single spaced.
+    let text = '';
+    clone.childNodes.forEach(n => {
+      if (n.nodeType === 1 && n.tagName === 'BR') text += '\n';
+      else text += (n.textContent || '').replace(/\s+/g, ' ');
+    });
+    text = text.split('\n').map(l => l.trim()).join('\n');
+    if (text.trim()) parts.push(text.trim());
+  });
+  return parts.join('\n\n');
+}
+
+function copyMail(btn, includeOptional){
+  const root = btn.closest('.card').querySelector('.mail');
+  navigator.clipboard.writeText(mailText(root, includeOptional)).then(() => {
+    const t = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = t; btn.classList.remove('done'); }, 1600);
+  });
+}
+</script>
+</body>
+</html>

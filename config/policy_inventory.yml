@@ -1,0 +1,359 @@
+# Inventory of enacted policies restricting or restructuring young people's
+# screen and social media use.
+#
+# This file is the source of Table 1. Each entry records what was enacted, by
+# whom, when, and, critically, three things almost never reported together:
+#
+#   evaluation_prespecified  Was an evaluation designed before the policy took
+#                            effect, when it could still have had a clean
+#                            counterfactual?
+#   evaluation_status        Has anyone measured what happened?
+#   evidence_at_enactment    What evidence existed for THIS intervention, in
+#                            this population, at the moment it became law?
+#
+# The distinction in the last field matters more than it might appear. Evidence
+# that screen time correlates with distress is not evidence that restricting
+# screen time reduces distress; the second does not follow from the first, and
+# almost every policy here was justified by the first.
+#
+# Entries are populated from primary legislative sources and peer-reviewed
+# evaluations. `verified` marks entries whose details have been checked against
+# a primary source rather than press coverage; unverified entries must not be
+# cited in the manuscript until checked.
+
+policies:
+
+  # ---------------------------------------------------------------- Australia
+  - id: AUS-2024-SMMA
+    jurisdiction: Australia
+    level: national
+    name: Online Safety Amendment (Social Media Minimum Age) Act 2024
+    enacted: "2024-12"
+    effective: "2025-12-10"
+    type: age_restriction
+    description: >-
+      Prohibits users under 16 from holding accounts on specified social media
+      platforms; obligation falls on platforms to take reasonable steps at
+      account creation, enforced by civil penalty. World's first national
+      minimum-age law of this kind.
+    stated_rationale: youth mental health harm
+    evaluation_prespecified: true
+    evaluation_status: evaluated_early
+    evaluation_notes: >-
+      eSafety Commissioner commissioned an evaluation. Early observational
+      findings in BMJ (2026) report substantial circumvention and little change
+      in adolescent social media use. No mental health outcome yet reported.
+    key_evaluations:
+      - pmid: "42342272"
+        design: cross_sectional_repeated
+        outcome_class: device_use_behaviour
+      - pmid: "42386318"
+        design: observational
+        outcome_class: device_use_behaviour
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # -------------------------------------------------------------------- Japan
+  - id: JPN-2020-KAGAWA
+    jurisdiction: Japan (Kagawa Prefecture)
+    level: subnational
+    name: Ordinance on Countermeasures for Internet and Game Addiction
+    enacted: "2020-03"
+    effective: "2020-04-01"
+    type: time_limit
+    description: >-
+      Non-punitive ordinance directing families to limit children's video game
+      use to 60 minutes on weekdays and 90 minutes at weekends, with device use
+      ending at 21:00 for younger children and 22:00 for older. No penalty;
+      framed as a duty on guardians.
+    stated_rationale: gaming addiction, academic performance
+    legal_challenge: >-
+      Challenged by a 17-year-old resident; Takamatsu District Court upheld the
+      ordinance as constitutional in August 2022.
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evaluation_notes: >-
+      No peer-reviewed evaluation of behavioural or mental health outcomes
+      identified. The ordinance has been in force since 2020.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  - id: JPN-2025-TOYOAKE
+    jurisdiction: Japan (Toyoake City, Aichi)
+    level: municipal
+    name: Ordinance on appropriate use of smartphones
+    enacted: "2025-08"
+    effective: "2025-10"
+    type: time_limit
+    description: >-
+      Non-binding ordinance urging all residents, not only children, to limit
+      leisure smartphone use to two hours per day, with earlier cut-offs for
+      children. Explicitly carries no penalty and is framed as a norm-setting
+      measure.
+    stated_rationale: sleep, family communication
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # -------------------------------------------------------------- South Korea
+  - id: KOR-2011-SHUTDOWN
+    jurisdiction: South Korea
+    level: national
+    name: Youth Protection Revision Act ("Shutdown Law" / "Cinderella Law")
+    enacted: "2011-05"
+    effective: "2011-11-20"
+    repealed: "2021-08"
+    type: curfew
+    description: >-
+      Blocked under-16s from accessing online games between 00:00 and 06:00,
+      enforced through national identity verification at login.
+    stated_rationale: gaming addiction, sleep deprivation
+    evaluation_prespecified: false
+    evaluation_status: evaluated_after
+    evaluation_notes: >-
+      THE CENTRAL CASE FOR THIS PAPER. A decade in force, then evaluated, then
+      repealed. Published evaluations found negligible effects: the
+      most-cited estimate of the sleep benefit is on the order of a minute and
+      a half per night. Repealed in 2021 after government review concluded it
+      was ineffective and infringed young people's rights.
+    key_evaluations:
+      - pmid: "29434003"
+        design: natural_experiment
+        outcome_class: device_use_behaviour
+        note: >-
+          Effect of the Online Game Shutdown Policy on Internet Use, Internet
+          Addiction, and Sleeping Hours in Korean Adolescents. J Adolesc
+          Health 2018.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # ------------------------------------------------------------------- Sweden
+  - id: SWE-2024-GUIDELINES
+    jurisdiction: Sweden
+    level: national
+    name: Public Health Agency (Folkhälsomyndigheten) screen time recommendations
+    enacted: "2024-09"
+    type: guidance
+    description: >-
+      Age-banded guidance: no screen time under 2 years; maximum one hour daily
+      ages 2-5; one to two hours ages 6-12; two to three hours ages 13-18. No
+      phones in bedrooms overnight. Guidance rather than law.
+    stated_rationale: sleep, mental health, physical activity
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  - id: SWE-2025-OFFLINE
+    jurisdiction: Sweden
+    level: national
+    name: Complementary investment in offline youth activity
+    enacted: "2025"
+    type: substitution_environment
+    description: >-
+      Distinguishing feature among the policies inventoried: alongside
+      restriction, Sweden funded the alternative. Measures include state
+      support for youth sports and leisure participation (including activity
+      cards and subsidised access to clubs and gyms), library and cultural
+      programming, and a return to printed textbooks in schools.
+    stated_rationale: >-
+      Restriction alone removes an activity without supplying a substitute.
+      Displacement theory implies the mental health benefit, if any, comes from
+      what replaces screen time rather than from its absence.
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evaluation_notes: >-
+      No causal evaluation identified of whether the offline investment
+      modifies the effect of the restriction. This is arguably the single most
+      important untested question in the entire policy landscape, because it
+      is the only design that tests a mechanism rather than a prohibition.
+    evidence_at_enactment: theory_and_correlational
+    verified: false
+
+  # -------------------------------------------------------------------- China
+  - id: CHN-2021-MINORS
+    jurisdiction: China
+    level: national
+    name: NPPA online gaming restrictions for minors
+    enacted: "2021-08"
+    effective: "2021-09-01"
+    type: curfew
+    description: >-
+      Restricts under-18s to one hour of online gaming on Fridays, weekends,
+      and public holidays only (20:00-21:00), enforced by real-name
+      registration and facial recognition.
+    stated_rationale: gaming addiction, academic performance, myopia
+    evaluation_prespecified: false
+    evaluation_status: evaluated_partial
+    evaluation_notes: >-
+      Independent evaluation constrained by data access. Published analyses of
+      platform data report reduced in-scope playing time but substitution to
+      unregulated accounts and devices. No mental health outcome evaluation
+      identified.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # ------------------------------------------------------------------- Brazil
+  - id: BRA-2025-SCHOOL
+    jurisdiction: Brazil
+    level: national
+    name: Law restricting smartphone use in schools
+    enacted: "2025-01"
+    effective: "2025-02"
+    type: school_restriction
+    description: >-
+      National law restricting student smartphone use during school hours
+      across public and private basic education.
+    stated_rationale: attention, learning, mental health
+    evaluation_prespecified: false
+    evaluation_status: evaluated_early
+    key_evaluations:
+      - pmid: "42302991"
+        design: prospective_cohort
+        outcome_class: mental_health_symptoms
+        note: >-
+          Problematic Smartphone Use and Mental Health Trajectories During
+          Brazil's First-Year School-Hour Restrictions. JAACAP 2026.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # ------------------------------------------------------- United States (fed)
+  - id: USA-2023-SGADVISORY
+    jurisdiction: United States
+    level: national
+    name: Surgeon General's Advisory on Social Media and Youth Mental Health
+    enacted: "2023-05"
+    type: advisory
+    description: >-
+      Advisory concluding that social media poses "a profound risk of harm" to
+      youth mental health and calling for action by policymakers, platforms,
+      researchers, parents, and young people. Followed in June 2024 by a call
+      for a tobacco-style warning label on social media platforms.
+    stated_rationale: youth mental health crisis
+    evaluation_prespecified: false
+    evaluation_status: not_applicable_advisory
+    evaluation_notes: >-
+      An advisory is not itself an intervention, but it is the proximate
+      justification for much of the state legislation that followed, and its
+      own evidence appraisal is therefore in scope. The advisory itself
+      acknowledges that the evidence is insufficient to determine whether
+      social media is safe, which is a materially different claim from the one
+      the policy response has assumed.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  - id: USA-STATES-PHONE
+    jurisdiction: United States (state level)
+    level: subnational
+    name: State school cellphone restrictions
+    enacted: "2023-2026"
+    type: school_restriction
+    description: >-
+      More than 30 states have enacted or mandated restrictions on student
+      phone use during the school day, ranging from bell-to-bell bans to
+      classroom-only restrictions. Implementation and enforcement vary widely.
+    stated_rationale: attention, learning, mental health, bullying
+    evaluation_prespecified: false
+    evaluation_status: largely_not_evaluated
+    evaluation_notes: >-
+      The heterogeneity across states is a natural experiment of unusual
+      quality that is going almost entirely unexploited. Staggered adoption
+      across states with differing intensity is close to an ideal setting for
+      difference-in-differences, and the outcome data (YRBS, state
+      administrative records) already exist.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # ------------------------------------------------------------ United Kingdom
+  - id: GBR-2023-OSA
+    jurisdiction: United Kingdom
+    level: national
+    name: Online Safety Act 2023, children's safety duties
+    enacted: "2023-10"
+    effective: "2025-07"
+    type: platform_duty
+    description: >-
+      Imposes duties on platforms to prevent children encountering harmful
+      content, with age assurance requirements enforced by Ofcom. A minimum-age
+      restriction along Australian lines has been under active consideration.
+    stated_rationale: exposure to harmful content, including self-harm content
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evidence_at_enactment: correlational_and_case_evidence
+    verified: false
+
+  # ------------------------------------------------------------------- France
+  - id: FRA-2018-SCHOOL
+    jurisdiction: France
+    level: national
+    name: Loi n° 2018-698, mobile phone ban in schools
+    enacted: "2018-08"
+    type: school_restriction
+    description: >-
+      Bans mobile phone use by pupils in nursery, primary, and lower secondary
+      schools, including at break times.
+    stated_rationale: attention, bullying, physical activity
+    evaluation_prespecified: false
+    evaluation_status: not_evaluated
+    evaluation_notes: >-
+      In force for eight years. No peer-reviewed causal evaluation of mental
+      health outcomes identified. A pre-post design with national data was
+      available throughout and was not conducted.
+    evidence_at_enactment: correlational_only
+    verified: false
+
+  # ------------------------------------------------------------------ Denmark
+  - id: DNK-2025-AGE
+    jurisdiction: Denmark
+    level: national
+    name: Proposed social media minimum age
+    enacted: "2025-11"
+    type: age_restriction
+    status: announced
+    description: >-
+      Government announcement of intent to prohibit social media accounts for
+      under-15s, with parental consent possible from 13.
+    stated_rationale: youth mental health
+    evaluation_prespecified: unknown
+    evaluation_status: not_yet_in_force
+    evidence_at_enactment: correlational_only
+    verified: false
+
+# ---------------------------------------------------------------------------
+# Professional and intergovernmental guidance, included because it is the
+# authority the statutory measures cite.
+# ---------------------------------------------------------------------------
+guidance:
+  - id: AAP-2026
+    body: American Academy of Pediatrics
+    date: "2026-01"
+    name: Updated policy on media use in childhood and adolescence
+    change: >-
+      Retired the fixed hourly-limit framework in favour of contextual
+      assessment for school-age children and adolescents, retaining age-banded
+      limits only for under-fives.
+    note: >-
+      The retirement of the hourly limits is itself informative: the earlier
+      thresholds were widely implemented, widely cited in policy, and were
+      withdrawn without ever having been tested as an intervention.
+
+  - id: WHO-2019
+    body: World Health Organization
+    date: "2019-04"
+    name: Guidelines on physical activity, sedentary behaviour and sleep for children under 5
+    change: >-
+      Recommended no sedentary screen time under 2, and no more than one hour
+      for ages 2-4.
+    note: >-
+      Graded by WHO's own GRADE assessment as based on very low certainty
+      evidence, a fact rarely carried forward into the policies that cite it.
+
+  - id: APA-2023
+    body: American Psychological Association
+    date: "2023-05"
+    name: Health advisory on social media use in adolescence
+    note: >-
+      Explicitly states that social media use is "not inherently beneficial or
+      harmful to young people", a considerably more cautious framing than the
+      policy response it is often cited to support.

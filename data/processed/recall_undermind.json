@@ -1,0 +1,19 @@
+{
+  "label": "undermind",
+  "input": "data/external/undermind_refs.csv",
+  "arms_checked": [
+    "A",
+    "B"
+  ],
+  "n_external": 147,
+  "n_matched": 67,
+  "n_missed": 80,
+  "recall": 0.4558,
+  "matched_via": {
+    "missed": 80,
+    "doi": 65,
+    "title": 2
+  },
+  "corpus_records_indexed": 208291,
+  "title_ratio_threshold": 92
+}

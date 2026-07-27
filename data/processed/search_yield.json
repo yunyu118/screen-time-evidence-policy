@@ -1,0 +1,25 @@
+{
+  "by_shard": {
+    "epmc_armA": {
+      "records": 27653,
+      "years": 9,
+      "years_expected": 17
+    },
+    "epmc_armB": {
+      "records": 81059,
+      "years": 17,
+      "years_expected": 17
+    },
+    "pubmed_armA": {
+      "records": 15276,
+      "years": 17,
+      "years_expected": 17
+    },
+    "pubmed_armB": {
+      "records": 3118,
+      "years": 17,
+      "years_expected": 17
+    }
+  },
+  "complete": false
+}

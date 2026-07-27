@@ -1,0 +1,520 @@
+# Published evaluations of policies and environmental interventions affecting
+# young people's screen, social media, or online gaming use.
+#
+# This file is the source of Table 2. Every numeric value here was read from the
+# indexed abstract or full text of the cited record, not from press coverage or
+# from a secondary citation. `verified_from` records where the numbers came
+# from, so a coauthor or reviewer can re-check them without repeating the
+# search.
+#
+# The columns are chosen to make one comparison easy: what the policy was meant
+# to change, versus what was actually measured. In most rows those are not the
+# same thing, and that gap is the paper's argument in tabular form.
+
+evaluations:
+
+  - policy_id: KOR-2011-SHUTDOWN
+    jurisdiction: South Korea
+    policy_short: Online game curfew (midnight to 6 AM), under-16s
+    pmid: "29434003"
+    year: 2018
+    journal: J Adolesc Health
+    design: difference_in_differences
+    design_label: Difference-in-differences, repeated national cross-sections
+    data_source: Korea Youth Risk Behavior Web-based Survey, 2011-2015
+    n_analysed: 244000
+    n_note: "approx"
+    outcomes_measured:
+      - device_use_behaviour
+      - mental_health_symptoms   # internet addiction scale
+      - sleep
+    outcome_primary: Daily internet use, minutes
+    effect_text: >-
+      -3.648 min (year 1, P = .001); -3.204 min (year 2, P = .011);
+      -1.140 min (year 3, P = .384); +2.190 min (year 4, P = .107)
+    secondary_text: No change in internet addiction or sleeping hours
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: "no"
+    direction: null_effect
+    verified_from: PubMed efetch abstract, PMID 29434003
+    verified: true
+
+  - policy_id: AUS-2024-SMMA
+    jurisdiction: Australia
+    policy_short: Social media minimum age 16, national
+    pmid: "42342272"
+    year: 2026
+    journal: BMJ
+    design: regression_discontinuity
+    design_label: Sharp regression discontinuity, prospectively planned
+    data_source: National adolescent cohort, pre- and 3 months post-implementation
+    n_analysed: 408
+    n_note: "of 436 followed"
+    outcomes_measured:
+      - device_use_behaviour
+    outcome_primary: Continued use of restricted platforms at 3 months
+    effect_text: >-
+      >85% of participants aged <16 y still using restricted platforms;
+      54%-68% via their own accounts; 15%-19% using fake accounts
+    secondary_text: Mental health outcomes not yet reported
+    suicide_outcome: false
+    powered_for_mental_health: not_applicable
+    preregistered: "yes"
+    direction: no_change_in_target_behaviour
+    verified_from: PubMed efetch abstract, PMID 42342272
+    verified: true
+
+  - policy_id: GBR-SCHOOL-PHONE
+    jurisdiction: England
+    policy_short: School phone restriction (school-level policy)
+    pmid: "40213498"
+    year: 2025
+    journal: Lancet Reg Health Eur
+    design: cross_sectional
+    design_label: Cross-sectional, 30 schools, restrictive vs permissive policy
+    data_source: SMART Schools study
+    n_analysed: 1227
+    n_note: "ages 12-15 y"
+    outcomes_measured:
+      - mental_health_symptoms
+      - device_use_behaviour
+      - sleep
+    outcome_primary: Warwick-Edinburgh Mental Well-Being Scale
+    effect_text: >-
+      Adjusted mean difference, -0.48 (95% CI, -2.05 to 1.06); P = .62
+    secondary_text: >-
+      Phone use during school hours lower in restrictive schools
+      (-0.67 h; 95% CI, -0.92 to -0.43); no difference in total weekday or
+      weekend use
+    suicide_outcome: false
+    powered_for_mental_health: "yes"
+    preregistered: not_reported
+    direction: null_effect
+    verified_from: PubMed efetch abstract, PMID 40213498
+    verified: true
+
+  - policy_id: BRA-2025-SCHOOL
+    jurisdiction: Brazil
+    policy_short: National school-hours smartphone restriction
+    pmid: "42302991"
+    year: 2026
+    journal: J Am Acad Child Adolesc Psychiatry
+    design: prospective_cohort
+    design_label: Prospective cohort, uncontrolled, spanning implementation
+    data_source: Adolescent cohort during first year of restriction
+    n_analysed: null
+    n_note: "see source"
+    outcomes_measured:
+      - mental_health_symptoms
+      - device_use_behaviour
+    outcome_primary: Problematic smartphone use and mental health trajectories
+    effect_text: >-
+      No concurrent comparison group; trajectories cannot be attributed to the
+      restriction
+    secondary_text: ""
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: not_reported
+    direction: uninterpretable_as_policy_effect
+    verified_from: PubMed record, PMID 42302991
+    verified: true
+
+  - policy_id: CHN-2021-MINORS
+    jurisdiction: China
+    policy_short: Online gaming restricted to 1 h on Fri/weekends/holidays
+    pmid: null
+    year: null
+    journal: Platform and industry data analyses
+    design: uncontrolled_pre_post
+    design_label: Uncontrolled pre-post using platform-reported data
+    data_source: Operator-reported play time; independent access restricted
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - device_use_behaviour
+    outcome_primary: In-scope playing time
+    effect_text: >-
+      Reduced time on registered accounts, with reported substitution to
+      unregulated accounts and devices
+    secondary_text: No mental health outcome evaluation identified
+    suicide_outcome: false
+    powered_for_mental_health: "no"
+    preregistered: "no"
+    direction: target_behaviour_displaced
+    verified_from: Narrative synthesis; no indexed causal evaluation identified
+    verified: false
+
+  # ---- added from full text, July 2026 -----------------------------------
+  # Everything below was extracted from the PDF, not from an abstract, so the
+  # effect estimates are quotable and the risk-of-bias fields are answerable.
+
+  - policy_id: KOR-2011-SHUTDOWN
+    jurisdiction: South Korea
+    policy_short: Online game curfew (midnight to 6 AM), under-16s
+    pmid: null
+    doi: "10.1287/mksc.2019.1174"
+    year: 2020
+    journal: Marketing Science
+    design: difference_in_differences
+    design_label: >-
+      Difference-in-differences with regression discontinuity at age 16 and
+      propensity score matching, on individual game-server logs
+    data_source: Operator play-time and spending logs, not self-report
+    n_analysed: null
+    n_note: "individual gamer logs; heavy = top 20% by prior play"
+    outcomes_measured:
+      - device_use_behaviour
+    outcome_primary: Total play time, minutes, and spending
+    effect_text: >-
+      Light gamers (bottom 80%) −108.752 min (P < .01). Heavy gamers (top 20%)
+      +0.173 min, ie, no effect. Within the treatment group, heavy gamers lost
+      154.9 and 41.1 min in the two curfew slots but gained 20.9, 69.8, 70.1,
+      74.3 and 37.6 min across the daytime and evening slots, a net increase.
+      Spending did not change.
+    secondary_text: >-
+      THE CENTRAL DISPLACEMENT RESULT. The law removed play from the restricted
+      hours and heavy users moved more minutes into unrestricted hours than
+      they lost. The effect direction flips in exactly the group the law was
+      written to protect.
+    suicide_outcome: false
+    powered_for_mental_health: not_applicable
+    preregistered: "no"
+    direction: target_behaviour_displaced
+    verified_from: Full text, Tables 2 and 3
+    verified: true
+
+  - policy_id: KOR-2011-SHUTDOWN
+    jurisdiction: South Korea
+    policy_short: Online game curfew, second independent evaluation
+    pmid: null
+    doi: "10.1016/j.tele.2017.07.006"
+    year: 2017
+    journal: Telematics and Informatics
+    design: controlled_before_after
+    design_label: Multiple regression on repeated national cross-sections
+    data_source: Korea Youth Risk Behavior Survey 2011-2012, ages 13-18
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - device_use_behaviour
+      - sleep
+    outcome_primary: Internet hours, internet addiction, sleep duration
+    effect_text: >-
+      Sleep duration +1.5 min. Internet addiction probability −0.7 percentage
+      points. Probability of being a high-ranked internet user +1.6 percentage
+      points. Effects differed by sex.
+    secondary_text: >-
+      The authors conclude the policy's effectiveness is arguable given the
+      effect size.
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: "no"
+    direction: null_effect
+    verified_from: Full text abstract and results
+    verified: true
+
+  - policy_id: GBR-SCHOOL-PHONE
+    jurisdiction: England
+    policy_short: School mobile phone bans (school-level policy)
+    pmid: null
+    doi: "10.1016/j.labeco.2016.04.004"
+    year: 2016
+    journal: Labour Economics
+    design: difference_in_differences
+    design_label: >-
+      Difference-in-differences on staggered school-level ban adoption, linked
+      to the National Pupil Database
+    data_source: Survey of schools in four English cities plus administrative records
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - academic
+    outcome_primary: High-stakes exam performance
+    effect_text: >-
+      +0.07 SD on average, concentrated in previously lowest-achieving students
+    secondary_text: >-
+      The most cited quantitative evaluation of school phone bans, and the
+      basis for much of the policy advocacy. The outcome is test scores, not
+      mental health.
+    suicide_outcome: false
+    powered_for_mental_health: not_applicable
+    preregistered: "no"
+    direction: benefit_academic_only
+    verified_from: Full text
+    verified: true
+
+  - policy_id: GBR-SCHOOL-PHONE
+    jurisdiction: Sweden
+    policy_short: School mobile phone bans, replication of Beland and Murphy
+    pmid: null
+    doi: "10.1016/j.econedurev.2020.102009"
+    year: 2020
+    journal: Economics of Education Review
+    design: difference_in_differences
+    design_label: >-
+      Same design as Beland and Murphy, larger sample, school survey response
+      approximately 75%
+    data_source: Swedish national school and grade registers
+    n_analysed: 15148
+    n_note: "school-year observations, preferred specification"
+    outcomes_measured:
+      - academic
+    outcome_primary: Merit points and national test scores
+    effect_text: >-
+      No effect. Effects larger than 0.024 SD are rejected; in the preferred
+      specification, positive effects larger than 0.01 SD are rejected, which
+      excludes the 0.07 SD reported by Beland and Murphy.
+    secondary_text: >-
+      A DIRECT REPLICATION FAILURE of the single most influential evaluation of
+      school phone bans, with tighter bounds than the original.
+    suicide_outcome: false
+    powered_for_mental_health: not_applicable
+    preregistered: "no"
+    direction: null_effect
+    verified_from: Full text, abstract and Table 3
+    verified: true
+
+  - policy_id: AUS-SCHOOL-PHONE
+    jurisdiction: Australia (South Australia)
+    policy_short: Phased school phone ban
+    pmid: null
+    doi: "10.1556/2006.2024.00058"
+    year: 2024
+    journal: Journal of Behavioral Addictions
+    design: controlled_before_after
+    design_label: Controlled natural experiment, banned vs comparison schools
+    data_source: Student self-report, approximately one month follow-up
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - mental_health_symptoms
+      - device_use_behaviour
+    outcome_primary: Problematic phone use, wellbeing, bullying, school belonging
+    effect_text: >-
+      No short-term effect on problematic phone use, bullying, or school
+      belonging. Academic engagement improved within the ban group but did not
+      differ between groups at follow-up.
+    secondary_text: ""
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: not_reported
+    direction: null_effect
+    verified_from: Undermind report synthesis; abstract
+    verified: false
+
+  - policy_id: CHN-2021-MINORS
+    jurisdiction: China
+    policy_short: Online gaming restriction, heavy-gamer compliance study
+    pmid: null
+    doi: "10.1556/2006.2024.00021"
+    year: 2024
+    journal: Journal of Behavioral Addictions
+    design: cross_sectional
+    design_label: Compliance and substitution survey of heavy gamers
+    data_source: Adolescent heavy gamers
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - device_use_behaviour
+    outcome_primary: Reported compliance and substitute activities
+    effect_text: >-
+      84.7% reported compliance, but 59% shifted to short videos, 51% to
+      television or anime, and 23% to other games.
+    secondary_text: >-
+      Compliance and benefit separate cleanly here: the regulated activity fell
+      while total recreational screen exposure did not.
+    suicide_outcome: false
+    powered_for_mental_health: "no"
+    preregistered: not_reported
+    direction: target_behaviour_displaced
+    verified_from: Undermind report synthesis; abstract
+    verified: false
+
+  - policy_id: CHN-2021-MINORS
+    jurisdiction: China
+    policy_short: Online gaming restriction, rural adolescent cohort
+    pmid: null
+    doi: "10.1186/s12888-023-05325-3"
+    year: 2023
+    journal: BMC Psychiatry
+    design: uncontrolled_pre_post
+    design_label: Longitudinal cohort with no untreated comparison group
+    data_source: Rural Chinese adolescents
+    n_analysed: null
+    n_note: ""
+    outcomes_measured:
+      - device_use_behaviour
+      - mental_health_symptoms
+    outcome_primary: Smartphone game time, addiction score, emotion
+    effect_text: >-
+      Lower reported game time and addiction scores, largest among adolescents
+      classified as addicted before the policy
+    secondary_text: >-
+      No comparison group and retrospective self-report, during a period of
+      other social change. Cannot be attributed to the policy.
+    suicide_outcome: false
+    powered_for_mental_health: not_reported
+    preregistered: not_reported
+    direction: uninterpretable_as_policy_effect
+    verified_from: Undermind report synthesis; abstract
+    verified: false
+
+# ---------------------------------------------------------------------------
+# The strongest available evidence on the exposure-outcome link the policies
+# are justified by. Kept separate from policy evaluations on purpose: this is
+# evidence about the premise, not about the remedy.
+# ---------------------------------------------------------------------------
+riskfactor_anchor:
+  - pmid: "42274377"
+    year: 2026
+    journal: Med J Aust
+    design: prospective_cohort
+    design_label: Population-based prospective cohort, ages 12-19 y
+    n_analysed: 1195
+    exposure_contrast: ">2 h vs <1 h daily social media use"
+    effects:
+      - outcome: High depressive symptoms at next annual wave
+        estimate: "Risk difference, 6.3 per 100 (95% CI, 2.7-9.9)"
+      - outcome: Poor wellbeing
+        estimate: "Risk difference, 4.9 per 100 (95% CI, 1.1-8.6)"
+      - outcome: High depressive symptoms, girls aged 12-13 y
+        estimate: "Risk difference, 10.8 per 100 (95% CI, 2.7-18.9)"
+    verified_from: PubMed efetch abstract, PMID 42274377
+    verified: true
+
+# ---------------------------------------------------------------------------
+# Causal-design studies of the exposure and SUICIDE specifically. Kept apart
+# from the symptom-scale cohort evidence because suicide is the outcome
+# invoked most often in advocacy for these laws, and because the designs
+# capable of addressing it do not agree.
+# ---------------------------------------------------------------------------
+suicide_causal_designs:
+  - doi: "10.1111/nyas.70016"
+    year: 2025
+    journal: Annals of the New York Academy of Sciences
+    design: instrumental_variable
+    design_label: >-
+      Two-stage least squares using the quasi-exogenous geographic adoption of
+      Twitter, instrumented by attendance at the 2007 SXSW festival
+    unit: US counties
+    finding: >-
+      No significant relationship between Twitter adoption and suicide rates,
+      controlling for geographic, socioeconomic, and demographic factors
+    direction: "null"
+    verified_from: Full text
+    verified: true
+
+  - doi: "10.1016/j.jad.2024.01.126"
+    year: 2024
+    journal: Journal of Affective Disorders
+    design: mendelian_randomization
+    design_label: Bidirectional two-sample Mendelian randomization
+    unit: UK Biobank, Neale Lab, FinnGen
+    finding: >-
+      No effect of duration of digital device use on suicide risk. In the
+      reverse direction, suicide risk was positively associated with length of
+      mobile phone use, which is consistent with reverse causation.
+    direction: reverse_causation
+    verified_from: Full text
+    verified: true
+
+  - doi: "10.1016/j.jhealeco.2025.103014"
+    year: 2025
+    journal: Journal of Health Economics
+    design: instrumental_variable
+    design_label: Fiber-optic rollout instrument with administrative hospital records
+    unit: Spain
+    finding: >-
+      Increases in behavioral and mental health diagnoses among adolescents,
+      concentrated among girls, including hospital-recorded self-harm or
+      suicide attempt and suicide mortality
+    direction: harm
+    verified_from: Undermind report synthesis
+    verified: false
+
+  - doi: "10.2139/ssrn.4082581"
+    year: 2025
+    journal: Journal of Health Economics
+    design: instrumental_variable
+    design_label: Staggered broadband rollout instrument with hospital records
+    unit: Italy
+    finding: >-
+      Increases in several hospitalization-based mental health outcomes among
+      cohorts exposed in childhood, including self-harm and compulsory
+      hospitalization, with sex-specific patterns
+    direction: harm
+    verified_from: Undermind report synthesis
+    verified: false
+
+# ---------------------------------------------------------------------------
+# Table 3: research priorities. Ordered by what could be started this year.
+# ---------------------------------------------------------------------------
+priorities:
+  - rank: 1
+    question: >-
+      Do school phone restrictions change adolescent mental health, and does
+      the effect depend on restriction intensity?
+    design: >-
+      Staggered-adoption difference-in-differences across US states, with
+      event-study specification and intensity coding
+    data: >-
+      Youth Risk Behavior Surveillance System; state administrative and
+      disciplinary records; existing statute effective dates
+    outcomes: Depressive symptoms, suicidal ideation, suicide attempt, absenteeism
+    feasibility: >-
+      High. Data already collected. Principal constraint is time: the
+      counterfactual disappears as adoption saturates.
+    cost: Low
+    timeline: 12-18 months
+
+  - rank: 2
+    question: >-
+      Does restriction improve mental health only when the vacated time is
+      filled, ie, is the mechanism displacement?
+    design: >-
+      Three-arm cluster-randomized trial: restriction alone, restriction plus
+      funded offline activity, usual practice
+    data: Primary collection; schools or municipalities as clusters
+    outcomes: >-
+      Validated wellbeing and depressive symptom scales, self-harm, device use,
+      physical activity, sleep
+    feasibility: >-
+      Moderate. Sweden's policy supplies the intervention design; no such trial
+      has been registered.
+    cost: High
+    timeline: 3-4 years
+
+  - rank: 3
+    question: >-
+      Does a national minimum-age law change mental health, as distinct from
+      account ownership?
+    design: >-
+      Extend the existing Australian regression discontinuity to mental health
+      endpoints, with a synthetic control from comparable non-adopting countries
+    data: >-
+      Australian cohort already assembled; national self-harm presentation and
+      mortality data
+    outcomes: Depressive symptoms, self-harm presentations, suicide
+    feasibility: >-
+      High for symptoms, moderate for self-harm, low for suicide within one
+      jurisdiction.
+    cost: Low to moderate
+    timeline: 12-24 months
+
+  - rank: 4
+    question: >-
+      Can any of these policies detect an effect on suicide or self-harm at
+      plausible effect sizes?
+    design: >-
+      Coordinated multi-jurisdiction pooled analysis with prespecified
+      harmonized outcome ascertainment; power analysis published in advance
+    data: >-
+      National mortality and emergency presentation registries across adopting
+      and non-adopting jurisdictions
+    outcomes: Suicide death, self-harm presentation
+    feasibility: >-
+      Moderate. No single jurisdiction has the events; the barrier is
+      coordination, not method.
+    cost: Moderate
+    timeline: 3-5 years
