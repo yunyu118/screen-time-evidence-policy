@@ -256,7 +256,8 @@ function section(children, landscape) {
           : LETTER,
         margin: landscape ? MARGIN_LS : MARGIN,
       },
-      lineNumbers: { countBy: 1, restart: "continuous" },
+      // Line numbers removed at the author's request. JAMA does not require
+      // them and they clutter the landscape table pages.
     },
     headers: { default: header() },
     footers: { default: footer() },

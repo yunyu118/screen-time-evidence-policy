@@ -2,17 +2,15 @@
 
 **Article type:** Special Communication (JAMA)
 
-**Authors:** Yunyu Xiao, PhD¹ (ORCID 0000-0002-0479-1781); [Coauthor 2, degree]²; [Coauthor 3, degree]³
+**Authors:** Yunyu Xiao, PhD¹ (ORCID 0000-0002-0479-1781); J. John Mann, MD²,³
 
-¹ Department of Population Health Sciences, Weill Cornell Medicine, Cornell University, New York, NY
-² [Affiliation]
-³ [Affiliation]
+**Author Affiliations:** ¹ Department of Population Health Sciences, Weill Cornell Medicine/NewYork-Presbyterian, New York, New York; ² Departments of Psychiatry and Radiology, Irving Medical Center, Columbia University, New York, New York; ³ Division of Molecular Imaging and Neuropathology, New York State Psychiatric Institute, New York, New York.
 
-**Corresponding author:** Yunyu Xiao, PhD, Department of Population Health Sciences, Weill Cornell Medicine, 575 Lexington Avenue, New York, NY 10022 (yux4008@med.cornell.edu)
+**Corresponding Author:** Yunyu Xiao, PhD, Weill Cornell Medicine/NewYork-Presbyterian Department of Population Health Sciences, 575 Lexington Ave, FP650A, New York, NY 10022 (yux4008@med.cornell.edu).
 
-**Word count:** 2722 (limit 3000)
+**Word count:** 2894 (limit 3000)
 **Abstract word count:** 346 (limit 350)
-**Tables:** 3 | **Figures:** 1 | **References:** 24 (limit 50)
+**Tables:** 3 | **Figures:** 1 | **References:** 25 (limit 50)
 
 ---
 
@@ -42,7 +40,7 @@ We assessed how much of the current policy landscape rests on evidence that the 
 
 We assembled an inventory of enacted or announced policies restricting children's and adolescents' screen, social media, or online gaming access, identified from legislative sources, government publications, and the peer-reviewed literature. For each, we recorded the intervention, the stated rationale, whether an evaluation was prespecified before implementation, whether any evaluation has been published, and the strongest evidence available for that specific intervention in that population at the time of enactment.
 
-We conducted a parallel systematic search of PubMed and Europe PMC (2010-2026) in two arms: evaluations of policies and environmental interventions affecting youth screen use, and studies estimating the effect of screen or social media exposure on youth mental health, self-harm, and suicide, restricted to designs capable of supporting causal inference. The two arms retrieved 127,106 records before deduplication: PubMed arm A, 15,276 records; Europe PMC arm A, 27,653 records from 9 of 17 publication years; PubMed arm B, 3,118 records; Europe PMC arm B, 81,059 records. [Provisional: the harvest is still running, and final PRISMA counts will be inserted before submission.] Search strategies, screening decisions, the policy inventory, and the evidence appraisal database are openly available (see Data Availability). The policy-evaluation arm deliberately did not require study-design terms in the query: requiring them would have retrieved only policies that were evaluated, and the proportion evaluated is precisely what we set out to measure. Design was coded at appraisal instead.
+We conducted a parallel systematic search of PubMed and Europe PMC (2010-2026) in two arms: evaluations of policies and environmental interventions affecting youth screen use, and studies estimating the effect of screen or social media exposure on youth mental health, self-harm, and suicide, restricted to designs capable of supporting causal inference. The two arms retrieved 227,413 records before deduplication: PubMed arm A, 15,276 records; Europe PMC arm A, 127,960 records from 14 of 17 publication years; PubMed arm B, 3,118 records; Europe PMC arm B, 81,059 records. [Provisional: the harvest is still running, and final PRISMA counts will be inserted before submission.] Search strategies, screening decisions, the policy inventory, and the evidence appraisal database are openly available (see Data Availability). The policy-evaluation arm deliberately did not require study-design terms in the query: requiring them would have retrieved only policies that were evaluated, and the proportion evaluated is precisely what we set out to measure. Design was coded at appraisal instead.
 
 ---
 
@@ -91,6 +89,10 @@ In a population-based Australian cohort followed from ages 12 to 19 years (n = 1
 The experimental evidence is a different matter. Two recent meta-analyses of randomized social media restriction report modest pooled benefits, but their participants are not the population the policies address: one pooled 32 trials of 5,544 participants who were all college students or adults, mean age about 23 years, and the other pooled 35 studies of 7,160 participants with a mean age of 27.3 years.¹⁷,¹⁸ In the larger review only 2 of 35 studies were at low risk of bias, interventions lasted under two weeks on average, and small-study bias was detected for depressive symptoms. Trials conducted in adults are being cited to justify compulsory restrictions on children.
 
 These are real, prospective, adjusted associations, and the age gradient is exactly what a developmental account would predict. They are also small in absolute terms, observational, and about an exposure contrast (2 hours versus 1 hour) that no enacted policy actually delivers. Australia did not move adolescents from 2 hours to 1 hour. On the available evidence it did not move them at all.
+
+A further problem sits underneath all of this: the exposure the policies regulate may not be the exposure that carries the risk. In the Adolescent Brain Cognitive Development Study, 4285 youths followed from a mean age of 10.0 years through four annual waves showed three distinct trajectories of addictive social media and mobile phone use and two of addictive video game use. Increasing addictive use of social media carried a risk ratio of 2.14 (95% CI, 1.61-2.85) for suicidal behaviors, and high-peaking addictive use a risk ratio of 2.39 (95% CI, 1.66-3.43), relative to low addictive use. **Total screen time at baseline was not associated with any outcome.**²¹ Nearly one third of participants entered an increasing addictive use trajectory beginning at age 11 years.
+
+Every measure in Table 1 regulates hours. None regulates the pattern of use that this evidence identifies as the risk factor, and a policy that reduces hours without changing compulsive engagement may leave the mechanism untouched. That is a testable proposition and it has not been tested.
 
 This is the crux, and Figure 1 sets it out. The inferential chain running from "heavy use is associated with more depressive symptoms" to "prohibiting accounts will reduce depressive symptoms" has three untested links: that the policy reduces use, that reduced use causes improved mental health, and that the reduction achieved is large enough to matter. The Korean and Australian evaluations bear on the first link and are not encouraging. The second requires experimental evidence that remains sparse in adolescents. The third has, to our knowledge, never been formally addressed. The exposure contrast that generates the observed association is measured in hours per day; the largest change any evaluated policy has produced is measured in minutes.
 
@@ -172,10 +174,11 @@ The children affected by these laws number in the tens of millions. They deserve
 18. Lopes M, Branje K, David A, et al. Effect of social media constraints on mental health: a systematic review and meta-analysis of experiments. *medRxiv*. 2026. doi:10.64898/2026.06.01.26354614 [Preprint; confirm publication status before submission.]
 19. Social media use and adolescent mental health: findings from a population-based cohort study in Australia. *Med J Aust*. 2026. PMID 42274377. [Verify author list and exact title before submission.]
 20. Folkhälsomyndigheten. *Recommendations on Screen Time for Children and Young People*. Public Health Agency of Sweden; 2024.
-21. Lee C, Kim H, Hong A. Ex-post evaluation of illegalizing juvenile online game after midnight: a case of shutdown policy in South Korea. *Telemat Inform*. 2017;34(8):1597-1606. doi:10.1016/j.tele.2017.07.006
-22. Zhou X, Liao M, Gorowska M, Chen X, Li Y. Compliance and alternative behaviors of heavy gamers in adolescents to Chinese online gaming restriction policy. *J Behav Addict*. 2024;13:687-692. doi:10.1556/2006.2024.00021
-23. King D, Radunz M, Galanis CR, Quinney B, Wade TD. Phones off while school's on: evaluating problematic phone use and the social, wellbeing, and academic effects of banning phones in schools. *J Behav Addict*. 2024;13:913-922. doi:10.1556/2006.2024.00058
-24. Problematic smartphone use and mental health trajectories during Brazil's first-year school-hour restrictions. *J Am Acad Child Adolesc Psychiatry*. 2026. PMID 42302991. [Verify author list and exact title before submission.]
+21. Xiao Y, Meng Y, Brown TT, Keyes KM, Mann JJ. Addictive screen use trajectories and suicidal behaviors, suicidal ideation, and mental health in US youths. *JAMA*. 2025;334(3):219-228. doi:10.1001/jama.2025.7829
+22. Lee C, Kim H, Hong A. Ex-post evaluation of illegalizing juvenile online game after midnight: a case of shutdown policy in South Korea. *Telemat Inform*. 2017;34(8):1597-1606. doi:10.1016/j.tele.2017.07.006
+23. Zhou X, Liao M, Gorowska M, Chen X, Li Y. Compliance and alternative behaviors of heavy gamers in adolescents to Chinese online gaming restriction policy. *J Behav Addict*. 2024;13:687-692. doi:10.1556/2006.2024.00021
+24. King D, Radunz M, Galanis CR, Quinney B, Wade TD. Phones off while school's on: evaluating problematic phone use and the social, wellbeing, and academic effects of banning phones in schools. *J Behav Addict*. 2024;13:913-922. doi:10.1556/2006.2024.00058
+25. Problematic smartphone use and mental health trajectories during Brazil's first-year school-hour restrictions. *J Am Acad Child Adolesc Psychiatry*. 2026. PMID 42302991. [Verify author list and exact title before submission.]
 
 *[References 24-50 to be added before submission: primary legislative sources for each policy in Table 1 (Australia Online Safety Amendment Act 2024; Kagawa Prefecture Ordinance 2020 and the 2022 Takamatsu District Court judgment; Toyoake City ordinance 2025; Korea Youth Protection Revision Act 2011 and the 2021 repeal; China NPPA notice 2021; Brazil Law 15.100/2025; France Loi n° 2018-698; UK Online Safety Act 2023; Denmark 2025 announcement; Sweden Folkhälsomyndigheten 2024 and the 2025 offline-activity measures), specification-curve analyses of social media and adolescent wellbeing, experimental social media reduction trials, and the displacement-hypothesis literature.]*
 
