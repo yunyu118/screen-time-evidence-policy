@@ -63,3 +63,8 @@ data/external/undermind_refs.ris
 # Symlink to the sibling project's install. Matches with no trailing
 # slash, because git stores a symlink as a file, not a directory.
 node_modules
+
+# Draft correspondence. The outbox holds unsent emails to named colleagues and
+# internal strategy notes. It is a working file, not a research artefact, and
+# does not belong in a public repository.
+manuscript/*_outbox.html
