@@ -2,9 +2,9 @@
 
 **Article type:** Special Communication (JAMA)
 
-**Authors:** Yunyu Xiao, PhD¹ (ORCID 0000-0002-0479-1781); J. John Mann, MD²,³
+**Authors:** Yunyu Xiao, PhD¹ (ORCID 0000-0002-0479-1781); Katherine M. Keyes, PhD²; Timothy T. Brown, PhD³; J. John Mann, MD⁴,⁵
 
-**Author Affiliations:** ¹ Department of Population Health Sciences, Weill Cornell Medicine/NewYork-Presbyterian, New York, New York; ² Departments of Psychiatry and Radiology, Irving Medical Center, Columbia University, New York, New York; ³ Division of Molecular Imaging and Neuropathology, New York State Psychiatric Institute, New York, New York.
+**Author Affiliations:** ¹ Department of Population Health Sciences, Weill Cornell Medicine/NewYork-Presbyterian, New York, New York; ² Columbia University Mailman School of Public Health, New York, New York; ³ School of Public Health, University of California, Berkeley, Berkeley, California; ⁴ Departments of Psychiatry and Radiology, Irving Medical Center, Columbia University, New York, New York; ⁵ Division of Molecular Imaging and Neuropathology, New York State Psychiatric Institute, New York, New York.
 
 **Corresponding Author:** Yunyu Xiao, PhD, Weill Cornell Medicine/NewYork-Presbyterian Department of Population Health Sciences, 575 Lexington Ave, FP650A, New York, NY 10022 (yux4008@med.cornell.edu).
 
@@ -146,7 +146,7 @@ The children affected by these laws number in the tens of millions. They deserve
 
 ## Article Information
 
-**Author Contributions.** Dr Xiao had full access to all of the data in the study and takes responsibility for the integrity of the data and the accuracy of the data analysis. [Remaining ICMJE categories to be completed once coauthors are confirmed.]
+**Author Contributions.** Dr Xiao had full access to all of the data in the study and takes responsibility for the integrity of the data and the accuracy of the data analysis. [CRediT roles to be completed for all authors before submission.]
 
 **Conflict of Interest Disclosures.** [To be completed.]
 
