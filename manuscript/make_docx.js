@@ -223,7 +223,11 @@ if (fs.existsSync(figPath)) {
 }
 
 // --- document ---------------------------------------------------------------
-const RUNNING_HEAD = "Recommending Without Testing";
+// Derived from the manuscript's own H1 rather than typed here. A hard-coded
+// running head survived one title change already and printed the old title on
+// every page of the submission copy.
+const TITLE = (md.match(/^#\s+(.+)$/m) || [, "Untitled"])[1].trim();
+const RUNNING_HEAD = TITLE.split(":")[0].trim();
 
 function footer() {
   return new Footer({
@@ -267,7 +271,7 @@ function section(children, landscape) {
 
 const doc = new Document({
   creator: "Yunyu Xiao",
-  title: "Recommending Without Testing: The Evidence Gap in Youth Screen Time and Social Media Policy",
+  title: TITLE,
   description: "JAMA Special Communication. Policy inventory and evidence appraisal, STEP project.",
   styles: {
     default: {

@@ -1,8 +1,8 @@
 {
   "by_shard": {
     "epmc_armA": {
-      "records": 127960,
-      "years": 14,
+      "records": 192465,
+      "years": 17,
       "years_expected": 17
     },
     "epmc_armB": {
@@ -21,5 +21,5 @@
       "years_expected": 17
     }
   },
-  "complete": false
+  "complete": true
 }

@@ -1,9 +1,35 @@
 {
-  "run_utc": "2026-07-27T20:38:21.662350+00:00",
-  "arms": {
+  "run_utc": "2026-07-29T23:30:07.457000+00:00",
+  "run_args": {
+    "arm": "A",
+    "sources": "epmc",
+    "count_only": false
+  },
+  "harvested_this_run": {
     "A": {
-      "pubmed": 15276,
-      "europepmc": 133360
+      "europepmc": 64505
+    }
+  },
+  "corpus": {
+    "A": {
+      "europepmc": {
+        "records": 192465,
+        "years": 17
+      },
+      "pubmed": {
+        "records": 15276,
+        "years": 17
+      }
+    },
+    "B": {
+      "europepmc": {
+        "records": 81059,
+        "years": 17
+      },
+      "pubmed": {
+        "records": 3118,
+        "years": 17
+      }
     }
   }
 }

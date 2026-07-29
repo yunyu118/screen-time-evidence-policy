@@ -189,6 +189,28 @@ def run_epmc(c: dict, arm: str, count_only: bool) -> int:
     return total
 
 
+def corpus_totals() -> dict:
+    """Records on disk per shard directory, read from the completion markers.
+
+    The run_* functions return only what the current invocation harvested,
+    because a shard that is already complete is skipped and contributes zero.
+    That is the right number for a progress log and the wrong number for a
+    summary: a resumed run that finished the last three years would report a
+    17-year corpus as three years' worth. The completion markers are the same
+    source of truth ``manuscript/build.py`` reads, so deriving the summary from
+    them keeps the two files from disagreeing.
+    """
+    out: dict[str, dict[str, int]] = {}
+    for d in sorted(RAW.glob("*_arm*")):
+        src, arm = d.name.rsplit("_arm", 1)
+        markers = sorted(d.glob("*.done"))
+        out.setdefault(arm, {})[{"epmc": "europepmc"}.get(src, src)] = {
+            "records": sum(int(f.read_text().strip() or 0) for f in markers),
+            "years": len(markers),
+        }
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--arm", choices=["A", "B", "both"], default="both")
@@ -201,17 +223,25 @@ def main() -> int:
     arms = ["A", "B"] if args.arm == "both" else [args.arm]
     srcs = [s.strip() for s in args.sources.split(",")]
 
-    summary = {"run_utc": datetime.now(timezone.utc).isoformat(), "arms": {}}
+    harvested: dict[str, dict[str, int]] = {}
     for arm in arms:
-        summary["arms"][arm] = {}
+        harvested[arm] = {}
         if "pubmed" in srcs:
-            summary["arms"][arm]["pubmed"] = run_pubmed(c, arm, args.count_only)
+            harvested[arm]["pubmed"] = run_pubmed(c, arm, args.count_only)
         if "epmc" in srcs:
-            summary["arms"][arm]["europepmc"] = run_epmc(c, arm, args.count_only)
+            harvested[arm]["europepmc"] = run_epmc(c, arm, args.count_only)
 
+    summary = {
+        "run_utc": datetime.now(timezone.utc).isoformat(),
+        "run_args": {"arm": args.arm, "sources": args.sources,
+                     "count_only": args.count_only},
+        "harvested_this_run": harvested,   # new shards only
+        "corpus": corpus_totals(),         # everything on disk
+    }
     INTERIM.mkdir(parents=True, exist_ok=True)
     (INTERIM / "search_summary.json").write_text(json.dumps(summary, indent=2))
-    log.info("summary: %s", json.dumps(summary["arms"]))
+    log.info("this run: %s", json.dumps(harvested))
+    log.info("corpus:   %s", json.dumps(summary["corpus"]))
     return 0
 
 
